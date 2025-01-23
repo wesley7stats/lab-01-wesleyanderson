@@ -204,6 +204,7 @@ You can load the packages by running the following in the Console.
 ```{r message=FALSE}
 library(tidyverse) 
 library(datasauRus)
+library(datasets)
 ```
 
 Note that the packages are also loaded with the same commands in your R Markdown document.
@@ -297,21 +298,46 @@ Start with `dino_data` and calculate a summary statistic that we will call `r` a
 ```
 
 ```{r}
- dino_data%>%
-  summarize(r = cor(x, y))
+ `dino_data`%>%
+  summarize(r = cor(x,y))
+
+
 ```	
 
 🧶 ✅ ⬆️ *Knit, commit, and push your changes to GitHub with the commit message "Added answer for Ex 2". Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
 3.  Plot `y` vs. `x` for the `star` dataset. You can (and should) reuse code we introduced above, just replace the dataset name with the desired dataset. Then, calculate the correlation coefficient between `x` and `y` for this dataset. How does this value compare to the `r` of `dino`?
 
-It doesnt change **x** and **y** 
+The r of dino is -0.06447185	while the r of star is 0.0629611. 
+```{r}
+star_data <- datasaurus_dozen %>%
+  filter(dataset == "star")
+```
+
+```{r fig.fullwidth=TRUE}
+ggplot(data = star_data, mapping = aes(x = x, y = y)) +
+  geom_point()
+```
+
+```{r}
+ `star_data`%>%
+  summarize(r = cor(x,y))
+
+
+```	
+
+It does not change **x** and **y** 
 
 🧶 ✅ ⬆️ *This is another good place to pause, knit, commit changes with the commit message "Added answer for Ex 3", and push. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
 4.  Plot `y` vs. `x` for the `circle` dataset. You can (and should) reuse code we introduced above, just replace the dataset name with the desired dataset. Then, calculate the correlation coefficient between `x` and `y` for this dataset. How does this value compare to the `r` of `dino`?
 
-There is no chnage for 'circle' dataset **x**, and **y**
+```{r}
+star_data <- datasaurus_dozen %>%
+  filter(dataset == "circle")
+```
+
+There is no change for 'circle' dataset **x**, and **y**
 
 🧶 ✅ ⬆️ *You should pause again, commit changes with the commit message "Added answer for Ex 4", and push. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
