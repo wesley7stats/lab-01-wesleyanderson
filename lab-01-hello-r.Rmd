@@ -299,7 +299,7 @@ Start with `dino_data` and calculate a summary statistic that we will call `r` a
 ```{r}
 dino_data %>%
   summarize(r = cor(x, y))
-```
+```	
 
 🧶 ✅ ⬆️ *Knit, commit, and push your changes to GitHub with the commit message "Added answer for Ex 2". Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
